@@ -4,5 +4,7 @@ class Recipe < ApplicationRecord
     has_many :ingredients, through: :recipe_ingredients
 
     # accepts_nested_attributes_for :user
-    validates :name, presence: true, :uniquenes => {:case_sensitive => false}
+    validates :name, presence: true, :uniqueness => {:case_sensitive => false}
+
+    validates :ingredient_ids, presence: true
 end
