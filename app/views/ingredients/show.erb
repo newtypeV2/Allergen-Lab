@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Show Page</title>
+        <h1>Ingredient Information Page</h1>
+    </head>
+
+    <body>
+        <%= @ingredient.name %>
+        <h3>People Allergic to This Ingredient</h3>
+        <ul>
+        <% @ingredient.users.each do |user| %>
+            <li><%= user.name %></li>
+        <%end%>
+        </ul>
+    </body>
+</html>

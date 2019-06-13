@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>New Recipe</title>
+        <h1>Create a New Recipe</h1>
+    </head>
+
+    <body>
+
+        <%= form_for @recipe do |f| %>
+        <%= f.label "Recipe's Name" %>
+        <%= f.text_field :name %>
+        
+        <!-- <%= f.fields_for :user,@recipe.create_user do |c| %>
+            <%= c.label "Recipe Creator" %>
+            <%= c.text_field :name %>
+            <%end%> -->
+        
+        <%= f.collection_select(:user_id, User.all, :id, :name, {:prompt => "Choose a Chef"}) %> 
+
+        <%= f.submit "Submit Recipe" %>
+        <%end%>
+
+    </body>
+</html>
