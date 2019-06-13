@@ -1,0 +1,6 @@
+<h1><%= @recipe.name %></h1>
+<ul>
+    <% @recipe.recipe_ingredients.each do |recipe_ing| %>
+    <li><%= "#{recipe_ing.amount} - #{recipe_ing.measurement} #{recipe_ing.ingredient.name}"%></li>
+    <% end %>
+</ul>
