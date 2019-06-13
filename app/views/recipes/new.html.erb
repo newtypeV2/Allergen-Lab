@@ -7,6 +7,12 @@
 
     <body>
 
+        <% if @recipe.errors %>
+            <% @recipe.errors.full_messages.each do |m| %>
+                <h4 style='color:red'><%= m %></h4>
+            <%end%>
+        <%end%>
+
         <%= form_for @recipe do |f| %>
         <%= f.label "Recipe's Name" %>
         <%= f.text_field :name %>
