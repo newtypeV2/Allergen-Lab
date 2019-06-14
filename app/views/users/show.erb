@@ -1,10 +1,8 @@
-<!DOCTYPE HTML>
-<html>
-    <head>
-    
-    </head>
-
-    <body>
-        
-    </body>
-</html>
+<h1><%= @user.name %>'s Page</h1>
+<h2>Allergic to:</h2>
+<ul>
+    <% @user.ingredients.each do |ingredient| %>
+    <li><%= link_to ingredient.name, ingredient_path(ingredient) %></li>
+    <% end %>
+</ul>
+<h3><%= link_to "DELETE", user_path(@user), method: :delete , data: { confirm: "Are you sure?" }  %></h3>

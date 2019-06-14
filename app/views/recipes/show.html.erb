@@ -1,9 +1,10 @@
 <h1><%= @recipe.name %></h1>
-<h2>By: <%= @recipe.user.name %></h2>
+<h2>By: <%= link_to @recipe.user.name,user_path(@recipe.user) %></h2>
+<h3>NEEDS:</h3>
 <ul>
     <% @recipe.recipe_ingredients.each do |recipe_ing| %>
-    <li><%= "#{recipe_ing.amount} - #{recipe_ing.measurement} #{recipe_ing.ingredient.name}"%></li>
+    <li><%=link_to recipe_ing.ingredient.name,ingredient_path(recipe_ing.ingredient)%></li>
     <% end %>
 </ul>
-
+<%= link_to "New Recipe", new_recipe_path %>
 <%= link_to "All Recipes", recipes_path %>

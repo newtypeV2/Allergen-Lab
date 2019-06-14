@@ -26,8 +26,6 @@ ActiveRecord::Schema.define(version: 2019_06_13_164423) do
   end
 
   create_table "recipe_ingredients", force: :cascade do |t|
-    t.integer "amount"
-    t.string "measurement"
     t.integer "recipe_id"
     t.integer "ingredient_id"
     t.datetime "created_at", null: false

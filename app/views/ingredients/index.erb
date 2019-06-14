@@ -8,7 +8,7 @@
     <body>
         
         <% @ingredients.each do |ing| %>
-            <h2><%= ing.name %></h2>
+            <h2><%=link_to ing.name,ingredient_path(ing) %></h2>
         <% end %>
 
     </body>

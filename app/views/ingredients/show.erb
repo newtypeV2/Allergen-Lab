@@ -7,10 +7,16 @@
 
     <body>
         <%= @ingredient.name %>
+        <h3>Used in the following Recipes:</h3>
+        <ul>
+            <% @ingredient.recipes.each do |recipe| %>
+            <%= link_to recipe.name,recipe_path(recipe) %>
+            <% end %>
+        </ul>
         <h3>People Allergic to This Ingredient</h3>
         <ul>
         <% @ingredient.users.each do |user| %>
-            <li><%= user.name %></li>
+            <li><%= link_to user.name, user_path(user) %></li>
         <%end%>
         </ul>
 
